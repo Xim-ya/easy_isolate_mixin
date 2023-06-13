@@ -1,7 +1,3 @@
 library easy_isolate_helper;
+export 'src/isolate_helper_mixin.dart';
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
