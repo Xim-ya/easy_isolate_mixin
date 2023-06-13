@@ -1,39 +1,113 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+<h1 align="center">Easy Isolate Helper</h1>
+<p align="center"><img src="https://github.com/aagarwal1012/Animated-Text-Kit/assets/75591730/f9d03a37-c830-45d7-9adb-20bb096f942b"/></p>
+<p align="center">The Easy Isolate Helper is a powerful mixin package designed to streamline the usage of isolates in your Flutter applications. With this Package, you can easily leverage isolates to perform concurrent and computationally intensive tasks without blocking the main thread.</p><br>
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+<p align="center">
+  <a href="https://flutter.dev">
+    <img src="https://img.shields.io/badge/Platform-Flutter-02569B?logo=flutter"
+      alt="Platform" />
+  </a>
+  <a href="">
+    <img src="https://img.shields.io/pub/v/easy_isolate_helper"
+      alt="Pub Package"/>
+  </a>
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/github/license/aagarwal1012/animated-text-kit?color=red"
+      alt="License: MIT" />
+  </a>
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+</p><br>
 
-## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
 
-## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+# Key Features
 
-## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+*   🔑  Extremely easy to use
+*   👨‍👦‍👦  Efficient Isolate Management  
+*   🔥  Enhanced Performance
+*   🥶  Prevents your UI from freezing
+*   🛠  Scalability enabled by mixins
 
-```dart
-const like = 'sample';
+
+
+# Installing
+
+To use the Easy Isolate Helper package in your Flutter project, follow these steps:
+
+1. Depend on it
+
+Add the following line to your project's `pubspec.yaml` file under the `dependencies` section:
+
+```yaml
+dependencies:
+  easy_isolate_helper: ^1.0.0
 ```
 
-## Additional information
+2. Install it
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+Run the following command in your terminal or command prompt:
+
+```
+$ flutter pub get
+```
+
+3. Import it
+
+Add the following import statement to your Dart code:
+
+```dart
+import 'package:easy_isolate_helper/easy_isolate_helper.dart';
+```
+
+# Usage
+
+1. Import the package:
+
+```dart
+import 'package:easy_isolate_helper/easy_isolate_helper.dart';
+```
+
+
+2. Create a class and mixin the `IsolateHelperMixin`:
+
+```dart
+class Service with IsolateHelperMixin {
+  // Your methods and logic here
+}
+```
+
+3. Use the `loadWithIsolate()` method to perform expensive work:
+
+```dart
+class Service with IsolateHelperMixin {
+  Future<void> performExpensiveWork() async {
+    final result = await loadWithIsolate(() {
+      // Perform your expensive work here
+      // Return the result
+    });
+    
+  }
+}
+```
+
+In the `performExpensiveWork()` method, you can use the `loadWithIsolate()` method from the `IsolateHelperMixin` to perform your expensive work in a separate isolate. Simply pass a function to `loadWithIsolate()` that contains your expensive computation. The result of the computation will be returned as a `Future`.
+
+## Handling Big Data
+Here's an example of using `loadWithIsolate()` to fetch a list of `SomeData` objects:
+
+```dart
+class DataSource with IsolateHelperMixin {
+  Future<List<SomeData>> fetchAmountOfData() => loadWithIsolate(() => _api.getAmountOfData());
+}
+```
+
+The `_api.getAmountOfData()` function represents your data fetching logic. It will be executed in a separate isolate, allowing your UI to remain responsive while the data is being fetched. The result will be returned as a `Future<List<SomeData>>`.
+
+Note: Make sure the function you pass to `loadWithIsolate()` returns a value or a `Future` that resolves to the desired result type.
+
+That's it! You can now leverage the power of isolates to perform concurrent and computationally intensive tasks without blocking the main thread, thanks to the Easy Isolate Helper mixin.
+
+
