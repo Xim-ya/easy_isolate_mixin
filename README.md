@@ -84,7 +84,7 @@ class Service with IsolateHelperMixin {
 ```dart
 class Service with IsolateHelperMixin {
   Future<void> performExpensiveWork() async {
-    final result = await loadWithIsolate(() {
+    final result = await loadWithIsolate(() async{
       // Perform your expensive work here
       // Return the result
     });
@@ -100,7 +100,8 @@ Here's an example of using `loadWithIsolate()` to fetch a list of `SomeData` obj
 
 ```dart
 class DataSource with IsolateHelperMixin {
-  Future<List<SomeData>> fetchAmountOfData() => loadWithIsolate(() => _api.getAmountOfData());
+  Future<List<SomeData>> fetchAmountOfData() => 
+  loadWithIsolate(() => _api.getAmountOfData());
 }
 ```
 
