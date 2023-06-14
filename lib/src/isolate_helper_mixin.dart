@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:collection';
 import 'dart:isolate';
-import 'package:easy_isolate_helper/src/isolate_entry.dart';
-import 'package:easy_isolate_helper/src/run_isolate_entry.dart';
+import 'package:easy_isolate_mixin/src/isolate_entry.dart';
+import 'package:easy_isolate_mixin/src/run_isolate_entry.dart';
 import 'package:flutter/services.dart';
 
 // Mixin class to handle Isolate

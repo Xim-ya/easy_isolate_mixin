@@ -1,7 +1,7 @@
-name: easy_isolate_helper
+name: easy_isolate_mixin
 description: A simplified mixin for launching Dart isolates in Flutter, seamlessly working with Flutter plugins
-version: 1.0.0
-homepage: https://github.com/Xim-ya/easy_isolate_helper
+version: 1.0.1
+homepage: https://github.com/Xim-ya/easy_isolate_mixin
 
 environment:
   sdk: '>=3.0.3 <4.0.0'

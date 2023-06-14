@@ -1,4 +1,4 @@
-import 'package:easy_isolate_helper/easy_isolate_helper.dart';
+import 'package:easy_isolate_mixin/easy_isolate_mixin.dart';
 
 class Service with IsolateHelperMixin {
   Future<List<int>> performExpensiveWork() =>

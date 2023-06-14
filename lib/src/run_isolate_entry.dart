@@ -1,4 +1,4 @@
-import 'package:easy_isolate_helper/src/isolate_entry.dart';
+import 'package:easy_isolate_mixin/src/isolate_entry.dart';
 import 'package:flutter/services.dart';
 
 // Function to be executed in Isolate
